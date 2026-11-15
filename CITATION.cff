@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this open-source educational model, please cite the repository, and do not claim that it is a validated detector or clinical PET model."
+title: "RadiantDAQ — Scintillator and SiPM Readout Research Toolkit"
+type: software
+authors:
+  - family-names: Karaduman
+    given-names: Burhan
+    affiliation: Middle East Technical University
+repository-code: "https://github.com/BurhanKARADUMAN/RadiantDAQ"
+license: MIT
+version: 0.1.0
+keywords:
+  - silicon photomultiplier
+  - scintillator
+  - detector physics
+  - nuclear instrumentation
+  - PET
+  - coincidence timing
+abstract: >-
+  A transparent, synthetic scintillator-SiPM simulation and signal-chain
+  prototype for detector-physics education and future experimental validation.

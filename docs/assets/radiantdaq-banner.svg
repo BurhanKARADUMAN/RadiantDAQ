@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="350" viewBox="0 0 1440 350" role="img" aria-labelledby="t d">
+<title id="t">RadiantDAQ research toolkit</title><desc id="d">Dark technical banner showing a gamma event, scintillator and digital waveform.</desc>
+<defs><linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#071521"/><stop offset="1" stop-color="#153f4b"/></linearGradient><linearGradient id="mint" x1="0" x2="1"><stop stop-color="#5fdbc0"/><stop offset="1" stop-color="#b1f7df"/></linearGradient></defs>
+<rect width="1440" height="350" rx="24" fill="url(#bg)"/>
+<g opacity=".09" stroke="#9be6dc" stroke-width="1"><path d="M100 0V350 M200 0V350 M300 0V350 M400 0V350 M500 0V350 M600 0V350 M700 0V350 M800 0V350 M900 0V350 M1000 0V350 M1100 0V350 M1200 0V350 M1300 0V350"/><path d="M0 60H1440 M0 140H1440 M0 220H1440 M0 300H1440"/></g>
+<text x="76" y="93" font-size="20" font-weight="700" font-family="Arial, sans-serif" fill="#69dac3" letter-spacing="4">DETECTOR PHYSICS / NUCLEAR INSTRUMENTATION</text>
+<text x="76" y="194" font-size="94" font-weight="800" font-family="Arial, sans-serif" fill="#f0faf8">Radiant<tspan fill="url(#mint)">DAQ</tspan></text>
+<text x="82" y="252" font-size="26" font-family="Arial, sans-serif" fill="#b5dad9">Scintillator &amp; SiPM Readout Research Toolkit</text>
+<text x="82" y="298" font-size="16" font-family="Arial, sans-serif" fill="#87b7bf" letter-spacing="1">REPRODUCIBLE SYNTHETIC MODEL  ·  READOUT ELECTRONICS  ·  TIMING  ·  PET</text>
+<g transform="translate(1020,55)">
+<path d="M20 150L20 95L60 74L125 74L165 95V150L125 171L60 171Z" stroke="#7ce8d2" stroke-width="3" fill="#1d5761" fill-opacity=".45"/><path d="M20 95H165M20 150H165M60 74V171" stroke="#7ce8d2" stroke-width="2" fill="none"/><path d="M8 13L83 124" stroke="#ffd891" stroke-width="4" stroke-dasharray="7 9"/><g fill="#fdd394"><circle cx="80" cy="115" r="9"/><circle cx="115" cy="133" r="5"/><circle cx="90" cy="145" r="4"/><circle cx="58" cy="131" r="4"/></g>
+<path d="M185 126H219L228 116L244 148L258 106L278 127L315 127" fill="none" stroke="#75e8cc" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M185 153H318" stroke="#8dbabf" stroke-dasharray="5 8" opacity=".6"/>
+<text x="6" y="217" font-size="16" font-family="Arial" fill="#a5e8df">γ → photons → pulse</text>
+</g>
+</svg>

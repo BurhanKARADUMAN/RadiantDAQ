@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="246" viewBox="0 0 1280 246" role="img" aria-labelledby="t d">
+<title id="t">Detector readout architecture</title><desc id="d">Five sequential blocks showing gamma interaction, scintillator, SiPM, analog front end and DAQ and metrics.</desc>
+<rect width="1280" height="246" rx="20" fill="#0d2632"/>
+<g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+<g fill="#1d3f4c" stroke="#68d9c2" stroke-width="2"><rect x="31" y="66" rx="12" width="207" height="116"/><rect x="278" y="66" rx="12" width="207" height="116"/><rect x="525" y="66" rx="12" width="207" height="116"/><rect x="772" y="66" rx="12" width="207" height="116"/><rect x="1019" y="66" rx="12" width="230" height="116"/></g>
+<g fill="#e5f6f2" font-size="19" font-weight="700"><text x="135" y="108">511 keV γ</text><text x="382" y="108">Scintillator</text><text x="628" y="108">SiPM</text><text x="875" y="108">Analog front-end</text><text x="1134" y="108">DAQ &amp; metrics</text></g>
+<g fill="#a2c4c7" font-size="14"><text x="135" y="141">ideal full deposition</text><text x="382" y="141">optical statistics</text><text x="628" y="141">PDE · cells · noise</text><text x="875" y="141">shaping · threshold</text><text x="1134" y="141">energy · timing</text></g>
+<g fill="#7de4c7" font-size="32"><text x="258" y="128">→</text><text x="505" y="128">→</text><text x="752" y="128">→</text><text x="998" y="128">→</text></g>
+<text x="640" y="35" font-size="14" letter-spacing="2" fill="#8de4d0">MODEL PIPELINE · SYNTHETIC — NOT A PHYSICAL DETECTOR BENCHMARK</text>
+<text x="640" y="219" font-size="13" fill="#96b8bf">Geant4/GATE transport, circuit-calibrated pulses and measured CTR are planned future validation milestones.</text>
+</g></svg>
