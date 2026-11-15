@@ -1,0 +1,12 @@
+{
+  "origin": "User-supplied GATE9.4-derived event CSVs, November 2026",
+  "exact_original_files": "six energy_per_primary_keV CSVs + run_metrics_original.csv",
+  "checks": "each 5000 events; event energy physical range; aggregate totals, counts, means checked",
+  "uncertainty": "Wilson score 95% for individual proportions; unadjusted Wald 95% for pairwise material differences",
+  "scientific_limits": [
+    "ideal collimated gamma geometry",
+    "one random seed per parameter combination",
+    "no optical photons, sensor PDE, readout electronics or measurements",
+    "no estimates of energy FWHM, CTR, scanner sensitivity or clinical performance"
+  ]
+}

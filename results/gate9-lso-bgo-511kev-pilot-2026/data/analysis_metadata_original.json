@@ -1,0 +1,14 @@
+{
+  "source": "GATE9 real ROOT Hits from local runs",
+  "runs": 6,
+  "energy_keV": 511,
+  "units_of_ROOT_edep": "MeV interpreted per GATE convention",
+  "conditional_geometry": "3x3 mm crystal; perfectly aimed 511keV gamma; not isotropic PET sensitivity",
+  "limitations": [
+    "No optical scintillation transport",
+    "No SiPM PDE or microcell response",
+    "No calibrated energy FWHM or CTR",
+    "No measurement",
+    "Thin crystal scoring values are only meaningful if ROOT Hits tree and event IDs are verified"
+  ]
+}
