@@ -1,49 +1,55 @@
-# RadiantDAQ Phase 1.1 — GATE 9.4 raw audit and multi-seed review
+# RadiantDAQ Phase 1.1 — validated ROOT/DoseActor audit
 
-**Status (2026-11-15):** The author reports a successful read-only WSL recheck of all 18 original ROOT `Hits` and DoseActor RAW files (90,000 incident 511-keV gamma histories). The full generated audit artifacts are retained on the author's WSL system until explicitly published via `publish_branch_safe.sh`. The published files are **derived outputs**, not the large original ROOT/RAW files or laboratory measurements.
+**Status: locally executed and published as derived evidence (2026-11-15).**
 
-**Scientific distinction:** An internally consistent audit is not an experimental validation, a Geant4 physics-systematics study, or evidence of a characteristic X-ray escaping the crystal. The 400–440 keV region contains 726 BGO and 4 LSO events in the full 90k campaign; particle creation and boundary-crossing tracking is required to establish the feature's origin.
+The 18-run, 90,000-primary GATE 9.4 / Geant4 11.2.2 multi-seed gamma-transport campaign was audited from the *author's local original ROOT Hits and DoseActor MetaImage data*, preserving the original simulation inputs. All 18 checks completed successfully in the author's WSL session, and the small derived reports were published in this research folder. This does **not** constitute measured detector performance or an independent rerun on a separate machine.
 
-## Contents
+## Included
 
-- `raw_audit.py`: re-read and independently compare original GATE ROOT Hits, exported per-primary CSV, DoseActor MetaImage and archived file hashes. Read-only inputs.
-- `tests/test_raw_audit.py`: 10 automated tests including material-database hash-key regression and mismatch rejection.
-- `review/`: separate scientific review of the uploaded 90k summary ZIP and its per-run CSV tables (not the original raw-level output).
-- `AUDIT_EXECUTION_STATUS.md`: provenance of WSL terminal-output observation.
-- `publish_branch_safe.sh`: creates **only** a new review branch and a new results folder in a fresh clone. Reads additional raw-audit derived results from the author's WSL output directory.
+- `raw_audit.py` and `tests/test_raw_audit.py`: 10 software tests (including material-db SHA-256 regression checks).
+- `raw_audit_derived/RAW_AUDIT_REPORT.md`: locally generated report after re-reading original GATE ROOT and DoseActor data.
+- `raw_audit_derived/raw_run_audit.csv`: per-run recomputed metrics.
+- `raw_audit_derived/roi_400_440_events.csv`: event-level exploratory hit evidence, 730 entries.
+- `raw_audit_derived/roi_histogram_1kev.csv`: counts by 1-keV deposited-energy bin.
+- `raw_audit_derived/audit_manifest.json`: per-run hash and actor-output evidence.
+- `review/INDEPENDENT_SCIENTIFIC_REVIEW.md`: CSV-level review of the author's summary ZIP (performed separately from the local RAW audit).
+- `AUDIT_EXECUTION_STATUS.md`, `FIX_NOTES.md`: status and corrected hash-key provenance.
 
-## WSL: independent raw-audit reproduction
+The original raw `.root` and `.raw` files, full GATE build, Geant4 physics data and full `GateMaterials.db` remain with the author; they are not part of this repository folder. Downloaded derived CSV data cannot substitute for them when reproducing the GATE-level raw check.
+
+## Verified observed audit result
+
+| Quantity | Result |
+|---|---:|
+| Separate 511-keV gamma transport runs | 18 |
+| Incident primaries | 90,000 |
+| 400–440 keV deposited-energy ROI, BGO | 726 |
+| 400–440 keV deposited-energy ROI, LSO | 4 |
+| Largest absolute ROOT–DoseActor sum discrepancy | 0.0000913076 MeV |
+| SHA-256 of local material database | `3ad9c0993b48af4bd573be9e976b636fd93c4c33350abf76879542830548b850` |
+
+**Scientific interpretation:** a 511-keV primary depositing 400–440 keV in the crystal is not directly proof of characteristic X-ray escape. Hit-step `processName` labels and `parentID`/`trackID` do not yet establish created-particle energies and actual crystal-boundary crossings. Additional diagnostic GATE runs are needed.
+
+## Re-run tests from the repository root
 
 ```bash
-source "$HOME/bragg_venv/bin/activate"
+cd results/gate9-lso-bgo-511kev-phase1-1-raw-audit-2026
 python -m pip install -r requirements.txt
 python -m pytest -q tests/test_raw_audit.py
-# Choose a new output folder, never overwrite the archived run:
-python raw_audit.py \
-  --workspace "$HOME/radiantdaq_phase1_multiseed_2026" \
-  --output "$HOME/radiantdaq_phase1_1_raw_audit_recheck_NEW"
 ```
 
-This requires original 18 ROOT and RAW files, and a matching `GateMaterials.db`. Original campaign files are not modified.
-
-## Publishing (from the author's WSL system)
+## Re-check the author's existing RAW data (read-only input)
 
 ```bash
-source "$HOME/bragg_venv/bin/activate"
-bash publish_branch_safe.sh
+python raw_audit.py \
+  --workspace "$HOME/radiantdaq_phase1_multiseed_2026" \
+  --output "$HOME/radiantdaq_phase1_1_raw_audit_RECHECK_NEW"
 ```
 
-The script requires the prior run's **existing** output folder `~/radiantdaq_phase1_1_raw_audit_2026`, verifies its summaries, then clones GitHub into a **new** directory and pushes exclusively to `research/phase1-raw-audit-2026`. It refuses to overwrite any existing publishing directory or target branch and never pushes to `main`. It includes five small derived audit files, not raw ROOT/RAW.
+The re-check refuses an existing output directory. Original runs must stay untouched.
 
-## Interpretation limits
+The local-only Git publishing helper used for the original upload is intentionally not tracked here because it creates a one-time branch and should not be rerun on the existing remote branch. Later releases should use a new branch and a separately reviewed PR.
 
-- ROOT hit-step `processName` and `parentID` are not proof of a escaping secondary from the crystal.
-- A `511 keV - deposited energy` deficit is not a directly measured escaped-photon energy.
-- Sampling variability, physics model/systematic uncertainty and laboratory measurement error are distinct.
-- This campaign does not simulate scintillation optical transport, SiPM signals, energy resolution, CTR or PET scanner sensitivity.
+## Scope
 
-## Base
-
-- Repository: https://github.com/BurhanKARADUMAN/RadiantDAQ
-- Original verified pilot commit: `3a10db4d1519cf97e1dad898b0bb21dbad4a1ec5`
-- Review folder target: `results/gate9-lso-bgo-511kev-phase1-1-raw-audit-2026/`
+The results are conditional radiation transport for an aligned, monoenergetic 511-keV gamma source and ideal 3×3 mm crystals. No optical simulation, PDE, SiPM current, energy-resolution FWHM, CTR, scatter/random PET coincidence model, detector-array sensitivity or experimental measurement is claimed.
