@@ -1,0 +1,18 @@
+{
+  "input_zip_sha256": "cece9f2acc3c5319caea042101126d0800635da53ceadc6301078a79f703793f",
+  "source_member_count": 25,
+  "source_zip_crc_check": "passed",
+  "n_run_rows": 36,
+  "n_unique_seeds": 36,
+  "n_primaries": 180000,
+  "n_pooled_conditions": 18,
+  "n_material_difference_rows": 27,
+  "max_exported_root_dose_difference_MeV": 8.389452705159783e-05,
+  "all_pooled_counts_verified_against_cases": true,
+  "all_reported_confidence_limits_recomputed": true,
+  "all_reported_material_differences_recomputed": true,
+  "phase_space_branch_names_present_all_cases": true,
+  "native_ROOT_RAW_PhaseSpace_bytes_in_uploaded_zip": false,
+  "simulation_manifest_status_field": "PREPARED_NOT_EXECUTED",
+  "interpretation": "Derived outputs independently reaggregated; ROOT, RAW, PhaseSpace files not present for independent byte-level verification."
+}

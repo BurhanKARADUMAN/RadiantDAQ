@@ -1,0 +1,83 @@
+# RADIANTDAQ_REGION_FLUO_PAIRED mode=ON seed=8457202 events=10000
+# RadiantDAQ GATE9 v0.3 no-system sensitive detector pilot (NOT optical photon / measured SiPM performance)
+# BGO 20 mm thickness, 5000 gamma histories, independent seed 8301109
+# Crystal: 3 x 3 x 20 mm at origin. Single collimated 511 keV gamma from z=-50 mm to +z.
+# The source is intentionally NOT isotropic and is NOT back-to-back annihilation gamma emission.
+# Only intrinsic interaction/full-deposit efficiency conditioned on an incident gamma is studied.
+/gate/geometry/setMaterialDatabase /home/burhan/Gate-9.4/GateMaterials.db
+/gate/world/geometry/setXLength 200. mm
+/gate/world/geometry/setYLength 200. mm
+/gate/world/geometry/setZLength 200. mm
+/gate/world/setMaterial G4_AIR
+
+/gate/world/daughters/name crystal
+/gate/world/daughters/insert box
+/gate/crystal/geometry/setXLength 3. mm
+/gate/crystal/geometry/setYLength 3. mm
+/gate/crystal/geometry/setZLength 20. mm
+/gate/crystal/placement/setTranslation 0. 0. 0. mm
+/gate/crystal/setMaterial BGO
+/gate/crystal/attachCrystalSDnoSystem
+
+# Single voxel over the entire crystal, useful as an independent aggregate sanity check.
+# NOTE: Edep actor output sums ALL events, not an event-level histogram.
+# Phase 1.2 diagnostic phase spaces; no PET digitizer, no optical photons.
+/gate/actor/addActor PhaseSpaceActor Outgoing
+/gate/actor/Outgoing/attachTo crystal
+/gate/actor/Outgoing/save outgoing.root
+/gate/actor/Outgoing/storeOutgoingParticles true
+/gate/actor/Outgoing/enableProductionProcess true
+/gate/actor/Outgoing/enableProductionVolume true
+/gate/actor/Outgoing/enableParticleName true
+/gate/actor/Outgoing/enableEkine true
+
+/gate/actor/addActor PhaseSpaceActor Created
+/gate/actor/Created/attachTo crystal
+/gate/actor/Created/save created.root
+/gate/actor/Created/storeSecondaries true
+/gate/actor/Created/enableProductionProcess true
+/gate/actor/Created/enableProductionVolume true
+/gate/actor/Created/enableParticleName true
+/gate/actor/Created/enableEkine true
+
+/gate/actor/addActor DoseActor edepScorer
+/gate/actor/edepScorer/attachTo crystal
+/gate/actor/edepScorer/save scoring.mhd
+/gate/actor/edepScorer/setResolution 1 1 1
+/gate/actor/edepScorer/enableEdep true
+/gate/actor/edepScorer/enableDose false
+
+# Hits with runID, eventID and per-step edep are required for event spectra.
+# For GATE 9.3+, attachCrystalSDnoSystem is required without a scanner system.
+# GATE may create Hits or Hits_crystal; inspect both.
+/gate/output/root/enable
+/gate/output/root/setFileName hits
+/gate/output/root/setRootHitFlag 1
+/gate/output/root/setRootSinglesFlag 0
+/gate/output/root/setRootCoincidencesFlag 0
+
+# Low-energy gamma EM transport: photoelectric, Compton and other applicable EM processes.
+/gate/physics/addPhysicsList emstandard_opt3
+/gate/random/setEngineSeed 8457202
+/gate/run/initialize
+/control/echo RADIANTDAQ_POSTINIT_REGION_CONTROL_BEGIN
+/process/em/deexcitation DefaultRegionForTheWorld true true true
+/process/em/deexcitation crystal true true true
+/control/echo RADIANTDAQ_POSTINIT_REGION_CONTROL_END
+
+/gate/source/addSource gamma511 gps
+# Specify a positive source activity explicitly for time-sliced GATE /startDAQ.
+# This DOES NOT change the 511-keV energy nor the requested primary count.
+/gate/source/gamma511/setActivity 100000. becquerel
+/gate/source/gamma511/gps/particle gamma
+/gate/source/gamma511/gps/ene/type Mono
+/gate/source/gamma511/gps/ene/mono 511. keV
+/gate/source/gamma511/gps/pos/type Point
+/gate/source/gamma511/gps/pos/centre 0. 0. -50. mm
+/gate/source/gamma511/gps/direction 0. 0. 1.
+
+/gate/application/setTotalNumberOfPrimaries 10000
+/gate/application/setTimeSlice 1. s
+/gate/application/setTimeStart 0. s
+/gate/application/setTimeStop 1. s
+/gate/application/startDAQ

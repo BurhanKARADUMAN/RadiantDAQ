@@ -1,0 +1,22 @@
+{
+  "status": "INDEPENDENT_ARCHIVE_DATA_AUDIT_PASSED",
+  "source_file": "RadiantDAQ_Fluorescence_40k_Validated_2026.zip",
+  "source_sha256": "8abb255de462d6d7e4784be12e8a0d240fed5eb83b6c345c5fb9d8cd02a36fd8",
+  "zip_file_count": 35,
+  "zip_integrity": true,
+  "runs_verified_from_individual_energy_csvs": 4,
+  "per_run_total_event_ids": 10000,
+  "SHA256_checks": 20,
+  "SHA256_checks_passed": 20,
+  "on_roi_400_440": 327,
+  "off_roi_400_440": 0,
+  "on_histories": 20000,
+  "off_histories": 20000,
+  "on_nearfull": 10216,
+  "off_nearfull": 10433,
+  "on_423_424_keV": 232,
+  "on_420_421_keV": 73,
+  "on_two_bins_fraction_of_ROI": 0.9327217125382263,
+  "two_sided_fisher_exact_p": 1.908727770105608e-99,
+  "caveat": "No native ROOT files inside ZIP. Cannot independently verify phase-space tracks, parent links, outgoing photon identities, or source ROOT hits from raw files. ROOT-Dose equality is a check of CSV-to-DoseActor consistency."
+}

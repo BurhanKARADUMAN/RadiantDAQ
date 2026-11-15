@@ -1,0 +1,38 @@
+{
+  "status": "VALIDATED",
+  "study": "BGO 3x3x20 mm, 511 keV incident gamma, two independently seeded ON/OFF regional controls",
+  "source_macro_sha256": "ad908f97c4710f00f0a5506c6e9217768a923f781d1a572e1adcf58ffc6651e5",
+  "results": {
+    "OFF": {
+      "runs": 2,
+      "histories": 20000,
+      "roi_400_440": 0,
+      "roi_fraction": 0.0,
+      "roi_wilson95": [
+        0,
+        0.00019203605610462553
+      ],
+      "nearfull_490_520": 10433,
+      "nearfull_fraction": 0.52165
+    },
+    "ON": {
+      "runs": 2,
+      "histories": 20000,
+      "roi_400_440": 327,
+      "roi_fraction": 0.01635,
+      "roi_wilson95": [
+        0.01468302587941621,
+        0.018202730597653788
+      ],
+      "nearfull_490_520": 10216,
+      "nearfull_fraction": 0.5108
+    }
+  },
+  "note": "Control tests region-level flags, ROOT-Dose energy closure. Global fluorescence stays ON. No optical light-collection or SiPM digitizer is simulated.",
+  "comparison": {
+    "roi_absolute_difference_ON_minus_OFF": 0.01635,
+    "roi_rate_ratio_ON_div_OFF": null,
+    "two_sided_fisher_exact_p": 1.9087277701028417e-99,
+    "warning": "Paired seeds improve matching of input conditions, but pathwise event identity is not guaranteed. The p-value is an event-count comparison; mechanism needs independent secondaries review."
+  }
+}
