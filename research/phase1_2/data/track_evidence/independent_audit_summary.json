@@ -1,0 +1,119 @@
+{
+  "audit_status": "PASS_ON_DERIVED_CSVS",
+  "scope": "only 327 ROI event-linkage rows, their outgoing secondary tracks, and crosscheck against existing independent 40k analysis",
+  "source_zip": "RadiantDAQ_327_Event_Track_Evidence.zip",
+  "source_sha256": "1e299ed6961b0fcee9d7d29ea33ef2ba78f830eb4ff75264f135a51f86017155",
+  "crosscheck_zip": "RadiantDAQ_Fluorescence_40k_Validated_2026.zip",
+  "crosscheck_sha256": "8abb255de462d6d7e4784be12e8a0d240fed5eb83b6c345c5fb9d8cd02a36fd8",
+  "N_events": 327,
+  "N_unique_keys": 327,
+  "N_created_track_matches": 327,
+  "N_crystal_log": 327,
+  "N_one_secondary_gamma_per_ROI_event": 327,
+  "N_parentID_1": 327,
+  "process_counts": {
+    "phot": 324,
+    "compt": 3
+  },
+  "outgoing_energy_keV": {
+    "min": 72.21241295337677,
+    "median": 87.66510337591171,
+    "max": 90.53400158882141,
+    "mean": 87.81228538044367
+  },
+  "deposited_energy_keV": {
+    "min": 420.465990900993,
+    "median": 423.334896564484,
+    "max": 438.787590712309
+  },
+  "closure_abs_keV": {
+    "max": 1.4960766293370398e-05,
+    "median": 5.960441740171518e-08,
+    "mean": 3.550423678048784e-06,
+    "all_within_0p0001": 327
+  },
+  "residual_definition": "511 - deposited_keV - outgoing_Ekine_keV_assumed",
+  "crosscheck_control_energy_max_difference_keV": 0.0,
+  "control_40k": {
+    "ON_ROI": 327,
+    "ON_histories": 20000,
+    "OFF_ROI": 0,
+    "OFF_histories": 20000,
+    "two_sided_fisher_p": 1.908727770105608e-99
+  },
+  "peak_bins_deposited": [
+    [
+      423,
+      232
+    ],
+    [
+      420,
+      73
+    ],
+    [
+      422,
+      7
+    ],
+    [
+      427,
+      2
+    ],
+    [
+      432,
+      2
+    ],
+    [
+      429,
+      2
+    ]
+  ],
+  "peak_energies_outgoing_keV_assumed": [
+    [
+      87.665103,
+      153
+    ],
+    [
+      87.139301,
+      77
+    ],
+    [
+      90.162799,
+      45
+    ],
+    [
+      90.534002,
+      14
+    ],
+    [
+      90.0326,
+      12
+    ],
+    [
+      88.246003,
+      4
+    ],
+    [
+      88.133998,
+      2
+    ],
+    [
+      90.366997,
+      2
+    ],
+    [
+      87.889321,
+      1
+    ],
+    [
+      83.082117,
+      1
+    ]
+  ],
+  "major_limitation": [
+    "ROOT files unavailable in uploaded evidence zip; track-created matching relies on source-derived flags",
+    "Ekine native MeV unit inferred by closure but not independently inspected",
+    "CreatorProcess does not specify emitting element or atomic transition",
+    "ROI selection and available phase-space actor coverage constrain interpretation"
+  ],
+  "conclusion": "Support for fluorescence-associated escaping secondary photons; exact Bi transitions not directly identified."
+}

@@ -1,0 +1,37 @@
+{
+  "status": "EVENT_LINKED_CANDIDATE_ANALYSIS_ONLY",
+  "input_study_status": "VALIDATED",
+  "run_summaries": [
+    {
+      "condition": "ON",
+      "seed": 8457101,
+      "primaries": 10000,
+      "roi_events": 166,
+      "roi_events_with_any_outgoing_gamma": 166,
+      "roi_events_with_60_110keV_outgoing_secondary": 166,
+      "outgoing_gamma_rows_from_roi": 166,
+      "outgoing_secondary_gamma_rows_from_roi": 166,
+      "outgoing_gamma_rows_with_creator_process": 166
+    },
+    {
+      "condition": "ON",
+      "seed": 8457202,
+      "primaries": 10000,
+      "roi_events": 161,
+      "roi_events_with_any_outgoing_gamma": 161,
+      "roi_events_with_60_110keV_outgoing_secondary": 161,
+      "outgoing_gamma_rows_from_roi": 161,
+      "outgoing_secondary_gamma_rows_from_roi": 161,
+      "outgoing_gamma_rows_with_creator_process": 161
+    }
+  ],
+  "source_native_ekine_unit_assumed": "MeV",
+  "roi_events": 327,
+  "roi_events_with_60_110_secondary_candidate": 327,
+  "roi_events_with_outgoing_gamma": 327,
+  "creator_process_labels_nonempty": {
+    "phot": 324,
+    "compt": 3
+  },
+  "warning": "Event-linked outgoing candidate analysis, NOT a standalone proof that photon is Bi K fluorescence. Check creator label gaps, volume geometry, track parent, native Ekine units and full energy transport."
+}

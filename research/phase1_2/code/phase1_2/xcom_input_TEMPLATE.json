@@ -1,0 +1,17 @@
+{
+  "notes": "Required source data: NIST XCOM at exactly 511 keV using the verified crystal material chemical composition and density. Replace TBD with documented numeric values. Prefer total excluding coherent scattering when comparing positive Edep; note definitions differ.",
+  "materials": {
+    "BGO_20mm": {
+      "mass_attenuation_cm2_g": "TBD",
+      "density_g_cm3": "TBD",
+      "thickness_mm": 20.0,
+      "source_url": "TBD"
+    },
+    "LSO_20mm": {
+      "mass_attenuation_cm2_g": "TBD",
+      "density_g_cm3": "TBD",
+      "thickness_mm": 20.0,
+      "source_url": "TBD"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+seed,eventID,deposited_keV,outgoing_gamma_keV_assumed,energy_closure_residual_keV,creator_process,production_volume,trackID,parentID,created_track_matched,control_csv_energy_match
+8457101,4344,420.8371895365,90.1627987623,1.17011365433e-05,compt,crystal_log,2,1,1,YES
+8457202,1031,423.8606989384,87.1393010020,5.96044174017e-08,compt,crystal_log,2,1,1,YES
+8457202,4675,420.8371937275,90.1627987623,7.51018552592e-06,compt,crystal_log,2,1,1,YES
