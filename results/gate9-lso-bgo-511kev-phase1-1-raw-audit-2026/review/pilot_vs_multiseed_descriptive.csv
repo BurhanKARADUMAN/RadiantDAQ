@@ -1,0 +1,13 @@
+material,thickness_mm,metric,pilot_5000_percent,new_15000_percent,new_minus_pilot_pp,approx_95ci_low_pp,approx_95ci_high_pp,interpretation
+BGO,10,interaction,59.36,59.71333333333333,0.3533333333333277,-1.2181599344664895,1.924826601133145,descriptive; historical environment not independently audited
+BGO,10,near_full,35.76,35.57333333333333,-0.1866666666666683,-1.7202785571377777,1.3469452238044413,descriptive; historical environment not independently audited
+BGO,20,interaction,83.62,83.09333333333333,-0.5266666666666753,-1.7150063411782899,0.6616730078449392,descriptive; historical environment not independently audited
+BGO,20,near_full,51.959999999999994,50.81333333333333,-1.1466666666666625,-2.7460245600567057,0.4526912267233809,descriptive; historical environment not independently audited
+BGO,30,interaction,92.92,92.52666666666669,-0.3933333333333233,-1.2194996324446215,0.4328329657779748,descriptive; historical environment not independently audited
+BGO,30,near_full,55.98,55.57333333333333,-0.4066666666666663,-1.9958916474280903,1.1825583140947578,descriptive; historical environment not independently audited
+LSO,10,interaction,55.96,55.90666666666667,-0.05333333333332746,-1.6423076815994357,1.5356410149327808,descriptive; historical environment not independently audited
+LSO,10,near_full,29.42,29.04,-0.38000000000000256,-1.837100541914664,1.0771005419146589,descriptive; historical environment not independently audited
+LSO,20,interaction,81.12,80.47333333333333,-0.6466666666666732,-1.9033117929650567,0.6099784596317106,descriptive; historical environment not independently audited
+LSO,20,near_full,43.46,42.51333333333333,-0.9466666666666679,-2.532179065469631,0.638845732136295,descriptive; historical environment not independently audited
+LSO,30,interaction,90.74,90.77333333333331,0.03333333333331856,-0.894072238690614,0.9607389053572511,descriptive; historical environment not independently audited
+LSO,30,near_full,47.36,47.81333333333333,0.4533333333333278,-1.1449429903111068,2.0516096569777624,descriptive; historical environment not independently audited
